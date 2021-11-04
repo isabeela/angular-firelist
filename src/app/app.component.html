@@ -29,10 +29,10 @@
   Logado como <b>{{ (authService.user | async)?.email }}</b>
 
   <button (click)="logout()">Sair</button>
-  <div>
-    <a [routerLink]="['/']">Início</a> |
-    <a [routerLink]="['firelist']">Lista do Firebase</a>
-  </div>
-  <hr />
-  <router-outlet></router-outlet>
 </div>
+<div>
+  <a [routerLink]="['/']">Início</a> |
+  <a [routerLink]="['firelist']">Lista do Firebase</a>
+</div>
+<hr />
+<router-outlet></router-outlet>
