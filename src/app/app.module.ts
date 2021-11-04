@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
-// imports google firebase//
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 
@@ -11,13 +10,14 @@ import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
 import { AuthService } from './auth.service';
 import { FirelistComponent } from './firelist/firelist.component';
+import { IndexComponent } from './index/index.component';
 
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
     RouterModule.forRoot([
-      { path: '', component: AppComponent },
+      { path: '', component: IndexComponent },
       { path: 'firelist', component: FirelistComponent },
     ]),
     AngularFireModule.initializeApp({
@@ -30,7 +30,12 @@ import { FirelistComponent } from './firelist/firelist.component';
     }),
     AngularFireAuthModule,
   ],
-  declarations: [AppComponent, HelloComponent, FirelistComponent],
+  declarations: [
+    AppComponent,
+    HelloComponent,
+    FirelistComponent,
+    IndexComponent,
+  ],
   bootstrap: [AppComponent],
   providers: [AuthService],
 })
